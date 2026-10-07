@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    @apply bg-brand-pink-bg text-brand-dark font-sans;
+  }
+  * { @apply box-border; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-dark text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-all hover:bg-brand-pink disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply border border-brand-dark text-brand-dark px-6 py-3 text-sm font-medium tracking-wide uppercase transition-all hover:bg-brand-dark hover:text-white;
+  }
+  .btn-pink {
+    @apply bg-brand-pink text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-all hover:bg-brand-pink/90;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 px-4 py-3 text-sm outline-none transition-colors focus:border-brand-pink;
+  }
+  .card {
+    @apply bg-white border border-gray-100;
+  }
+  .skeleton {
+    @apply bg-gray-100 animate-pulse;
+  }
+  .container-page {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-12 md:py-16;
+  }
+  .nav-link {
+    @apply text-sm font-medium text-brand-dark hover:text-brand-pink transition-colors relative;
+  }
+  .product-badge {
+    @apply absolute top-3 left-3 px-2 py-1 text-xs font-medium uppercase tracking-wide;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ccc; }
+
+/* Hide scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
