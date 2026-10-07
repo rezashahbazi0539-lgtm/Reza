@@ -22,7 +22,7 @@ services:
       - WATCHPACK_POLLING=true
     command: ["sh", "-ec", "apt-get update -qq && apt-get install -y -qq openssl > /dev/null 2>&1 && npm install --legacy-peer-deps && npx prisma generate && npx prisma db push --skip-generate && node prisma/seed.js && exec npm run dev"]
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/"]
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
       interval: 15s
       timeout: 5s
       retries: 6
