@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import StorefrontLayout from '@/components/StorefrontLayout';
-import Hero from '@/components/storefront/Hero';
+import ScrollDrivenVideoHero from '@/components/storefront/ScrollDrivenVideoHero';
 import CategoryCard from '@/components/storefront/CategoryCard';
 import ProductCard from '@/components/storefront/ProductCard';
 import EditorialBanner from '@/components/storefront/EditorialBanner';
@@ -41,8 +41,8 @@ export default async function HomePage() {
 
   return (
     <StorefrontLayout>
-      {/* Hero */}
-      <Hero data={data.heroData} />
+      {/* Hero — scroll-driven video */}
+      <ScrollDrivenVideoHero data={data.heroData} />
 
       {/* Categories */}
       <section className="section-padding bg-white">
